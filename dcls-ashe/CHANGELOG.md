@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.04.3 - [06.15.22]
+Removal of bacteria.msh from bin.
+Addition of --polish_db parameter on run command, used for bacteria.msh to be passed to Homopolish. 
+    This was done to isolate the large database file for uploading to Github. It will be on the user to download and pass off the database. 
+
 ## v1.03.2.2 - [06.09.23]
 
 ### `Added`
