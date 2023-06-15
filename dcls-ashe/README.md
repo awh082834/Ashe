@@ -24,6 +24,21 @@ On release, automated continuous integration tests run the pipeline on a full-si
 
 1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
 2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+3. Read Trims ([`Chopper`])
+4. Read QC Plots ([`NanoPlot`])
+5. Assembly ([`Flye`])
+6. Assembly Plot ([`Bandage`])
+7. Polishing:
+   ([`Medaka`])
+   ([`Homopolish`])
+8. Specues ID:
+   ([`Mash`])
+   ([`SeqSero2`])
+   ([`EmmTyper`])
+   ([`EcTyper`])
+9. Plasmid Characterization ([`Mob Suite`])
+10. AMR Characterization ([`AMRFinderPlus`])
+11. Assembly QC ([`Quast`])
 
 ## Quick Start
 
@@ -49,7 +64,7 @@ On release, automated continuous integration tests run the pipeline on a full-si
    <!-- TODO nf-core: Update the example "typical command" below used to run the pipeline -->
 
    ```bash
-   nextflow run dcls/ashe --input samplesheet.csv --outdir <OUTDIR> --genome GRCh37 -profile <docker/singularity/podman/shifter/charliecloud/conda/institute>
+   nextflow run dcls/ashe --input samplesheet.csv --outdir <OUTDIR> --polish_db <LOCATION OF HOMOPOLISH DB> -profile <docker/singularity/podman/shifter/charliecloud/conda/institute>
    ```
 
 ## Credits
