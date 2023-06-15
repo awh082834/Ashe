@@ -12,7 +12,8 @@
             "description": "Define where the pipeline should find input data and save output data.",
             "required": [
                 "input",
-                "outdir"
+                "outdir",
+                "polish_db"
             ],
             "properties": {
                 "input": {
@@ -30,6 +31,14 @@
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
+                },
+                "polish_db":{
+                    "type": "string",
+                    "format": "file-path",
+                    "pattern": "^\\S+\\.msh.gz",
+                    "description": "Path to the bacterial mash sketch used in Homopolish process.",
+                    "help_text": "You will need to download the mash sketch outlined in the Homopolish Github page located here: https://github.com/ythuang0522/homopolish",
+                    "fa_icon": "fas fa-file-gz"
                 },
                 "email": {
                     "type": "string",

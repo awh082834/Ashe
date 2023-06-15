@@ -27,8 +27,6 @@ process ECTYPER {
     def species_name = species.replace("\n","")
     """
 
-    gzip -d $projectDir/bin/refseq.genomes.k21s1000.msh.gz $projectDir/bin/refseq.genomes.k21s1000.msh
-
     if [ "$species_name" == "Escherichia_coli" ]; then
         if [ "$is_compressed" == "true" ]; then
             gzip -c -d $fasta > $fasta_name
@@ -43,8 +41,6 @@ process ECTYPER {
             --input $fasta_name
         mv $prefix/output.tsv $prefix/${prefix}_ectype.tsv
     fi
-
-    gzip $projectDir/bin/refseq.genomes.k21s1000.msh
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
