@@ -23,16 +23,16 @@ On release, automated continuous integration tests run the pipeline on a full-si
 5. Assembly ([`Flye`](https://github.com/fenderglass/Flye))
 6. Assembly Plot ([`Bandage`](https://github.com/rrwick/Bandage))
 7. Polishing:
-&nbsp; &nbsp; &nbsp; &nbsp; ([`Medaka`](https://github.com/nanoporetech/medaka))
-&nbsp; &nbsp; &nbsp; &nbsp; ([`Homopolish`](https://github.com/ythuang0522/homopolish))
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Download for Database: http://140.123.104.107/bioinfo/mash_sketches/bacteria.msh.gz
+&ensp; &nbsp; &nbsp; &nbsp; ([`Medaka`](https://github.com/nanoporetech/medaka))
+&ensp; &nbsp; &nbsp; &nbsp; ([`Homopolish`](https://github.com/ythuang0522/homopolish))
+&ensp; &nbsp; &nbsp; &nbsp; &nbsp; Download for Database: http://140.123.104.107/bioinfo/mash_sketches/bacteria.msh.gz
 8. Specues ID:
-&nbsp; &nbsp; &nbsp; &nbsp; ([`Mash`](https://mash.readthedocs.io/en/latest/distances.html))
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Download for Database: https://gembox.cbcb.umd.edu/mash/RefSeqSketchesDefaults.msh.gz
-&nbsp; &nbsp; &nbsp; &nbsp; ([`SeqSero2`](https://github.com/denglab/SeqSero2))
-&nbsp; &nbsp; &nbsp; &nbsp; ([`EmmTyper`](https://github.com/MDU-PHL/emmtyper))
-&nbsp; &nbsp; &nbsp; &nbsp; ([`ECTyper`](https://github.com/phac-nml/ecoli_serotyping))
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Download for Database: https://gembox.cbcb.umd.edu/mash/refseq.genomes.k21s1000.msh
+&ensp; &nbsp; &nbsp; &nbsp; ([`Mash`](https://mash.readthedocs.io/en/latest/distances.html))
+&ensp; &nbsp; &nbsp; &nbsp; &nbsp; Download for Database: https://gembox.cbcb.umd.edu/mash/RefSeqSketchesDefaults.msh.gz
+&ensp; &nbsp; &nbsp; &nbsp; ([`SeqSero2`](https://github.com/denglab/SeqSero2))
+&ensp; &nbsp; &nbsp; &nbsp; ([`EmmTyper`](https://github.com/MDU-PHL/emmtyper))
+&ensp; &nbsp; &nbsp; &nbsp; ([`ECTyper`](https://github.com/phac-nml/ecoli_serotyping))
+&ensp; &nbsp; &nbsp; &nbsp; &nbsp; Download for Database: https://gembox.cbcb.umd.edu/mash/refseq.genomes.k21s1000.msh
 9. Plasmid Characterization ([`Mob Suite`](https://github.com/phac-nml/mob-suite))
 10. AMR Characterization ([`AMRFinderPlus`](https://github.com/ncbi/amr/wiki/Running-AMRFinderPlus))
 11. Assembly QC ([`Quast`](https://github.com/ablab/quast))
