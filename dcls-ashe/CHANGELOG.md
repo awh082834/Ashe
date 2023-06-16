@@ -3,11 +3,23 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.04.3 - [06.15.22]
-Removal of bacteria.msh from bin.
-Addition of --polish_db parameter on run command, used for bacteria.msh to be passed to Homopolish. 
-    This was done to isolate the large database file for uploading to Github. It will be on the user to download and pass off the database. 
+## v1.04.4 - [06.16.22]
 
+### `Added`
+Addition of ectyper_db and mash_db to the run command, both databases used for species typing. Databases will have to be downloaded by user in order to lighten load on Github repo.
+
+### `Removed`
+Removal of databases for ECTyper and Mash from bin directory of pipeline.
+
+## v1.04.3 - [06.15.22]
+
+### `Added`
+Addition of --polish_db parameter on run command, used for bacteria.msh to be passed to Homopolish. 
+    This was done to isolate the large database file for uploading to Github. It will be on the user to download and pass off the database.
+
+### `Removed`
+Removal of bacteria.msh from bin.
+ 
 ## v1.03.2.2 - [06.09.23]
 
 ### `Added`
