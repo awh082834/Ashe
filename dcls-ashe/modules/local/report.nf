@@ -79,7 +79,7 @@ process REPORT {
                                     #assign total length
                                     total_len = int(lineList[7])
                                     row[4] = lineList[7]
-                                    row[6] = lineList[16]
+                                    row[6] = lineList[17]
                             quast.close()
                     
                     #If the file is a NanoPlot statistics report....
@@ -103,7 +103,7 @@ process REPORT {
                                 if 'sample_id' not in line:
                                     lineList = line.split()
                                     plasList.append(lineList[0].split(':')[1])
-                            row[8] = plasList
+                            row[10] = plasList
                             mob.close()
 
                     #If the file is the output of Mash Dist....
@@ -114,7 +114,7 @@ process REPORT {
                             temp = temp[0].split("-")
                             temp = temp[len(temp)-1].replace('.fna','')
                             temp = temp.split("_")
-                            row[5] = temp[0] + "_" + temp[1]
+                            row[7] = temp[0] + "_" + temp[1]
                             species.close()
 
                     #If the file is the output of ECTyper....
@@ -123,8 +123,8 @@ process REPORT {
                             for line in ectyper:
                                 if 'Name' not in line:
                                     lineList = line.split('\t')
-                                    row[6] = lineList[4]
-                                    row[7] = lineList[5]
+                                    row[8] = lineList[4]
+                                    row[9] = lineList[5]
                             ectyper.close()
 
                     #If the file is the output of EmmTyper....
@@ -150,7 +150,7 @@ process REPORT {
                 #After each file of a given sample has been gone through
                 #and the row list is fully edited it is written to the outfile
                 writer.writerow(row)
-                row = ['-','-','-','-','-','-','-','-','-']
+                row = ['-','-','-','-','-','-','-','-','-','-','-']
     build_report(get_files(newList))  
     """
 }
