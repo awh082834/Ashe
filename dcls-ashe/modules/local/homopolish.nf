@@ -17,8 +17,9 @@ process HOMOPOLISH {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    cp $params.polish_db $projectDir/bin/
-    gzip -d $projectDir/bin/bacteria.msh.gz
+    mkdir $projectDir/bin/$prefix
+    cp $params.polish_db $projectDir/bin/$prefix
+    gzip -d --force $projectDir/bin/$prefix/bacteria.msh.gz
 
     gzip -d --force $assem
     homopolish polish -m R9.4.pkl \\
@@ -28,7 +29,7 @@ process HOMOPOLISH {
         -o homopolish
     rm ${prefix}.fa
 
-    rm -rf $projectDir/bin/bacteria.msh
+    rm -rf $projectDir/bin/$prefix
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

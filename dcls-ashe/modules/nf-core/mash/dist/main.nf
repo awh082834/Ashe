@@ -23,18 +23,19 @@ process MASH_DIST {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     mkdir ${prefix}
-    cp $params.mash_db $projectDir/bin/
-    gzip -d $projectDir/bin/RefSeqSketchesDefaults.msh.gz
+    mkdir $projectDir/bin/mash_$prefix
+    cp $params.mash_db $projectDir/bin/mash_$prefix
+    gzip -d $projectDir/bin/mash_$prefix/RefSeqSketchesDefaults.msh.gz
 
     mash \\
         dist \\
         -p $task.cpus \\
         $args \\
-        $projectDir/bin/RefSeqSketchesDefaults.msh \\
+        $projectDir/bin/mash_$prefix/RefSeqSketchesDefaults.msh \\
         $query > ${prefix}.txt
     sort -gk3 ${prefix}.txt > ${prefix}/${prefix}_sorted.txt
 
-    rm -rf $projectDir/bin/RefSeqSketchesDefaults.msh
+    rm -rf $projectDir/bin/mash_$prefix
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
