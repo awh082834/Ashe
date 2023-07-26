@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## V1.04.5 - [07.26.23]
+
+### `Fixed`
+Fixed database and mash handling for Homopolish, Mash, and ECTyper.
+Fixed final report format errors
+
 ## v1.04.4 - [06.16.22]
 
 ### `Added`
