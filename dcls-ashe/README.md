@@ -55,7 +55,7 @@ On release, automated continuous integration tests run the pipeline on a full-si
 4. Start running your own analysis!
 
    ```bash
-   nextflow run dcls/ashe --input samplesheet.csv --outdir <OUTDIR> --polish_db <LOCATION OF HOMOPOLISH DB> --ectyper_db <LOCATION OF ECTYPER DB> --mash_db <LOCATION OF MASH DB> -profile <docker/singularity/podman/shifter/charliecloud/conda/institute>
+   nextflow run dcls/ashe --input samplesheet.csv --outdir <OUTDIR> -profile <docker/singularity/podman/shifter/charliecloud/conda/institute>
    ```
 
 ## Credits

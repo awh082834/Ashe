@@ -32,30 +32,6 @@
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
                 },
-                "polish_db":{
-                    "type": "string",
-                    "format": "file-path",
-                    "pattern": "^\\S+\\.msh.gz",
-                    "description": "Path to the bacterial mash sketch used in Homopolish process.",
-                    "help_text": "You will need to download the mash sketch outlined in the Homopolish Github page located here: https://github.com/ythuang0522/homopolish",
-                    "fa_icon": "fas fa-file-gz"
-                },
-                "ectyper_db": {
-                    "type": "string",
-                    "format": "file-path",
-                    "pattern": "^\\S+\\.msh",
-                    "description": "Path for the database used by ECTyper",
-                    "help_text": "Download the ECTyper database from here: https://gembox.cbcb.umd.edu/mash/refseq.genomes.k21s1000.msh",
-                    "fa_icon": "fas fa-file-msh"
-                },
-                "mash_db": {
-                    "type": "string",
-                    "format": "file-path",
-                    "pattern": "^\\S+\\.msh",
-                    "description": "Path for the database used by Mash for species ID",
-                    "help_text": "Download the Mash database from here: https://gembox.cbcb.umd.edu/mash/RefSeqSketchesDefaults.msh.gz",
-                    "fa_icon": "fas fa-file-gz"
-                },
                 "email": {
                     "type": "string",
                     "description": "Email address for completion summary.",
