@@ -11,9 +11,9 @@ process QUAST {
     tuple val (meta), path(reads), path (consensus)
 
     output:
-    path "${meta.id}/*"    , emit: results
+    path "${meta.id}/report.tsv"             , emit: results
     path ("${meta.id}/transposed_report.tsv"), emit: reportTSV
-    path "versions.yml" , emit: versions
+    path "versions.yml"                      , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
