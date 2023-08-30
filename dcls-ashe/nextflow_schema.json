@@ -13,7 +13,9 @@
             "required": [
                 "input",
                 "outdir",
-                "polish_db"
+                "polish_db",
+                "ectyper_db",
+                "mash_db"
             ],
             "properties": {
                 "input": {
