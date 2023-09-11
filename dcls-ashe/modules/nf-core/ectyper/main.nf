@@ -26,10 +26,6 @@ process ECTYPER {
     def fasta_name = fasta.getName().replace(".gz", "")
     def species_name = species.replace("\n","")
     """
-    mkdir $projectDir/bin/ec_$prefix
-    cp $params.ectyper_db $projectDir/bin/ec_$prefix
-    gzip -d $projectDir/bin/ec_$prefix/refseq.genomes.k21s1000.msh.gz
-
     if [ "$species_name" == "Escherichia_coli" ]; then
         if [ "$is_compressed" == "true" ]; then
             gzip -c -d $fasta > $fasta_name
@@ -37,7 +33,7 @@ process ECTYPER {
 
         ectyper \\
             $args \\
-            --refseq $projectDir/bin/ec_$prefix/refseq.genomes.k21s1000.msh \\
+            --refseq $projectDir/bin/refseq.genomes.k21s1000.msh \\
             --cores $task.cpus \\
             --output ${prefix} \\
             --verify \\
@@ -45,8 +41,6 @@ process ECTYPER {
         mv $prefix/output.tsv $prefix/${prefix}_ectype.tsv
     fi
 
-    rm -rf $projectDir/bin/ec_$prefix
-    
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         ectyper: \$(echo \$(ectyper --version 2>&1)  | sed 's/.*ectyper //; s/ .*\$//')

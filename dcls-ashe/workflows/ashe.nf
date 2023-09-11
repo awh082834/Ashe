@@ -37,6 +37,8 @@ include { UNZIP       } from '../modules/local/unzip'
 include { HOMOPOLISH  } from '../modules/local/homopolish'
 include { SPECIES     } from '../modules/local/species'
 include { REPORT      } from '../modules/local/report'
+include { ROTATE      } from '../modules/local/rotate'
+include { DB_COPY     } from '../modules/local/databases'
 
 //
 // SUBWORKFLOW: Consisting of a mix of local and nf-core/modules
@@ -108,6 +110,11 @@ workflow ASHE {
     ch_versions = ch_versions.mix(AMRFINDERPLUS_UPDATE.out.versions.first())
     
     //
+    // MODULES: Copy databases to bin 
+    //
+    DB_COPY()
+
+    //
     // MODULE: Run FastQC
     //
     FASTQC (
@@ -144,6 +151,10 @@ workflow ASHE {
         FLYE.out.assem, FLYE.out.gfa
     )
 
+    ROTATE(
+        UNZIP.out.unzip_assem
+    )
+
     //
     // MODULE: Run Bandage
     //
@@ -156,7 +167,7 @@ workflow ASHE {
     // MODULES: Run Medaka
     //
     MEDAKA(
-        UNZIP.out.med_ch
+        ROTATE.out.rotated
     )
     ch_versions = ch_versions.mix(MEDAKA.out.versions.first())
 

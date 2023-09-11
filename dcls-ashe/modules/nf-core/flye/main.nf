@@ -1,18 +1,19 @@
 process FLYE {
+    errorStrategy 'ignore'
     tag "$meta.id"
     label 'process_medium'
 
     conda "bioconda::flye=2.9"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/flye:2.9--py39h6935b12_1' :
-        'quay.io/biocontainers/flye:2.9--py39h6935b12_1' }"
+        'quay.io/biocontainers/flye:2.9.2--py310h2b6aa90_2' }"
 
     input:
     tuple val(meta), path(reads)
     val mode
 
     output:
-    tuple val(meta), path(reads), path("${meta.id}/*.fasta.gz"), emit: assem
+    tuple val(meta), path(reads), path("${meta.id}/*.fasta.gz"), path ("${meta.id}/*_info.txt"), emit: assem
     tuple val(meta), path("${meta.id}/*.gfa.gz")  , emit: gfa
     tuple val(meta), path("${meta.id}/*.gv.gz")   , emit: gv
     tuple val(meta), path("${meta.id}/*.txt")     , emit: txt
@@ -36,7 +37,8 @@ process FLYE {
         --out-dir . \\
         --threads \\
         $task.cpus \\
-        $args
+        $args \\
+        --no-alt-contigs
 
     mkdir ${prefix}
 

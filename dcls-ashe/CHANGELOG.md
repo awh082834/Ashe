@@ -3,6 +3,14 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.4.7 - [08.30.23]
+
+### Added
+New Processes; Rotate and Databases. Rotate is used to rotate circular assemblies prior to polish. Databases used to copy databases used to bin dir.
+
+### Fixed
+Database handling for ECTyper, Mash, and Homopolish.
+
 ## v1.4.6.2 - [08.30.23]
 Added and ignore error strategy to Flye in order to process blanks without pipeline crashing.
 

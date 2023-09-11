@@ -34,6 +34,24 @@
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
                 },
+                "polish_db":{
+                    "type": "string",
+                    "format": "file-path",
+                    "pattern": "^\\S+\\.msh$",
+                    "description": "Path to polishing database used by homopolish."
+                },
+                "ectyper_db":{
+                    "type": "string",
+                    "format": "file-path",
+                    "pattern": "^\\S+\\.msh$",
+                    "description": "Path to database used by ECTyper."
+                },
+                "mash_db":{
+                    "type": "string",
+                    "format": "file-path",
+                    "pattern": "^\\S+\\.msh$",
+                    "description": "Path to database used by MASH."
+                },
                 "email": {
                     "type": "string",
                     "description": "Email address for completion summary.",
