@@ -3,7 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.4.7 - [08.30.23]
+## v1.4.7.1 - [09.12.23]
+
+### Added
+database.nf includes check for previously copied databases. They will copy to bin folder on first run however after that it will check if they exist in the bin or not. 
+
+## v1.4.7 - [09.11.23]
 
 ### Added
 New Processes; Rotate and Databases. Rotate is used to rotate circular assemblies prior to polish. Databases used to copy databases used to bin dir.
