@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.4.8 - [12.29.23]
+
+### Added
+ErrorStrategy set to ignore for Rotate.nf (DNAapler) so that if rotation genes are not found it will not terminate whole analysis
+1000 bp length threshold added to the Chopper modules for filtering
+
 ## v1.4.7.1 - [09.12.23]
 
 ### Added
