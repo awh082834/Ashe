@@ -1,4 +1,6 @@
 process ROTATE {
+
+    errorStrategy 'ignore'
     tag "$meta.id: $prefix"
     label 'process_med'
 
@@ -23,6 +25,7 @@ process ROTATE {
     """
     mv $dummy1 ${readName}.fastq
     TEMP="temp.txt"
+
     awk '\$4=="N"{print \$1}' $info >> \$TEMP
     if [ \$(wc -l < \$TEMP) -eq 0 ]; then
         dnaapler all --input $fasta -o $outdir -p $prefix -t $task.cpus

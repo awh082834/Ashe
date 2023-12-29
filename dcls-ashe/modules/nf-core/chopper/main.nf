@@ -30,7 +30,8 @@ process CHOPPER {
         $fastq | \\
     chopper \\
         --threads $task.cpus \\
-        -q 10 | \\
+        -q 10 \\
+        -l 1000 | \\
     gzip \\
         $args3 > ${prefix}.fastq.gz
 
