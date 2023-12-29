@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/dcls/ashe/master/nextflow_schema.json",
     "title": "dcls/ashe pipeline parameters",
-    "description": "A test long read analysis pipeline to be run during EUA period",
+    "description": "DCLS Long Read Analysis Pipeline",
     "type": "object",
     "definitions": {
         "input_output_options": {

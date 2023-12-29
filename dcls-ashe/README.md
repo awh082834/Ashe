@@ -23,6 +23,7 @@ On release, automated continuous integration tests run the pipeline on a full-si
 5. Assembly ([`Flye`](https://github.com/fenderglass/Flye))
 6. Assembly Plot ([`Bandage`](https://github.com/rrwick/Bandage))
 7. Polishing:
+   - (['DNAapler](https://github.com/gbouras13/dnaapler))
    - ([`Medaka`](https://github.com/nanoporetech/medaka))
    - ([`Homopolish`](https://github.com/ythuang0522/homopolish))
       - Download for Database: http://140.123.104.107/bioinfo/mash_sketches/bacteria.msh.gz
@@ -55,7 +56,7 @@ On release, automated continuous integration tests run the pipeline on a full-si
 4. Start running your own analysis!
 
    ```bash
-   nextflow run dcls/ashe --input samplesheet.csv --outdir <OUTDIR> -profile <docker/singularity/podman/shifter/charliecloud/conda/institute>
+   nextflow run dcls/ashe --input samplesheet.csv --outdir <OUTDIR> --mash_db <location> --ectyper <location> --polish_db <location> --max_cpus <OPTIONAL> --max_memory <OPTIONAL> -profile <docker/singularity/podman/shifter/charliecloud/conda/institute>
    ```
 
 ## Credits
@@ -64,7 +65,7 @@ dcls/ashe was originally written by Andrew Hale.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+DCLS Sequencing and Bioinformatics Group
 
 ## Contributions and Support
 
